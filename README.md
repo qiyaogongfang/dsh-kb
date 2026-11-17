@@ -18,17 +18,23 @@ DSH 左侧栏里的本机知识库。把操作流程、操作规范、技术文�
 
 ## 安装
 
-### 方式一：本地目录（当前可用）
+### 方式一：npm（推荐）
+
+```bash
+npm install @qiyaogongfang/dsh-kb
+```
+
+在插件管理里安装 `@qiyaogongfang/dsh-kb`；或让 agent 执行 `plugin_manager` 的 `install_bundle`，target 填 `@qiyaogongfang/dsh-kb`。
+
+> 注意：npm 上还有一个 `dsh-kb`，那是**别人**的另一个知识库包，不是这个项目。认准作用域 `@qiyaogongfang/`。
+
+### 方式二：本地目录
 
 ```bash
 git clone https://github.com/qiyaogongfang/dsh-kb.git
 ```
 
-在 DSH 的插件管理里安装该目录；也可以让 agent 执行 `plugin_manager` 的 `install_bundle`，target 填克隆目录的绝对路径。
-
-### 方式二：npm（发布后）
-
-在插件管理中安装 `dsh-kb`；或让 agent 执行 `install_bundle`，target 填 `dsh-kb`。
+在插件管理里安装该目录；或让 agent 执行 `install_bundle`，target 填克隆目录的绝对路径。想改代码时用这种方式。
 
 ### 验证安装
 

@@ -1,0 +1,51 @@
+name: publish
+
+# 发布到 npm（@qiyaogongfang/dsh-kb）。
+# 首次发布用 token 手工发过 1.0.0；之后建议改用 trusted publishing（OIDC）：
+# 在 npm 包设置里登记 trusted publisher（qiyaogongfang / dsh-kb / publish.yml），
+# 之后推 v* tag 即由本工作流发布，仓库里不需要任何 token。
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  id-token: write # OIDC 换 npm 短时凭据，必须
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          # 不设 registry-url：它会在 .npmrc 里写一个空的 _authToken 占位，
+          # 让 npm 以为已经有凭据，反而不去走 OIDC。registry 改用环境变量传。
+
+      - name: 确保 npm 支持 trusted publishing / ensure npm supports OIDC
+        run: |
+          npm install -g npm@latest
+          node --version
+          npm --version
+
+      - name: 校验版本 / check version
+        run: |
+          node -e "
+            const pkg = require('./package.json');
+            const ref = process.env.GITHUB_REF_NAME.replace(/^v/, '');
+            const tagLike = /^v\d/.test(process.env.GITHUB_REF_NAME);
+            if (tagLike && pkg.version !== ref) {
+              console.error('版本不一致 / version mismatch：package.json ' + pkg.version + ' ≠ tag ' + ref);
+              process.exit(1);
+            }
+            console.log('准备发布 / publishing: ' + pkg.name + '@' + pkg.version);
+          "
+
+      - name: 发布 / publish
+        env:
+          NPM_CONFIG_REGISTRY: https://registry.npmjs.org
+        run: npm publish --provenance --access public
