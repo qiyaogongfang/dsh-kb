@@ -81,6 +81,11 @@ dsh-kb/
 └── icon.svg
 ```
 
+## 作者
+
+qiyaogongfang · <https://github.com/qiyaogongfang>
+
 ## License
 
-MIT
+MIT © qiyaogongfang
+
