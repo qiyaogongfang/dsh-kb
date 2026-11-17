@@ -1,0 +1,60 @@
+{
+  "name": "dsh-kb",
+  "version": "1.0.0",
+  "description": "本机知识库：按主题和标签分类存操作流程、规范、技术文档与踩坑记录，对话里按需检索并引用。 / Local-first knowledge base for DSH with two-level topics, tags and on-demand chat retrieval.",
+  "type": "module",
+  "license": "MIT",
+  "author": "qiyaogongfang <357743028+qiyaogongfang@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiyaogongfang/dsh-kb.git"
+  },
+  "homepage": "https://github.com/qiyaogongfang/dsh-kb#readme",
+  "bugs": {
+    "url": "https://github.com/qiyaogongfang/dsh-kb/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "knowledge-base",
+    "notes",
+    "documentation",
+    "markdown",
+    "local-first"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "store.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

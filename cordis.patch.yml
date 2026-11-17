@@ -1,0 +1,5 @@
+# 知识库：侧栏入口 + 本机 JSON 存储 + 五个工具 + 系统提示里的主题索引。
+# 浏览器半边由 package.json 的 dsh.client 声明加载（client.js）。
+- insert:
+    - id: kb
+      name: 'dsh-kb'
