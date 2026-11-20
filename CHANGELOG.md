@@ -1,10 +1,11 @@
 # 更新记录 / Changelog
 
-## 未发布 / Unreleased
+## 1.0.2 — 2026-11-20
 
 - 重写 README（中文 + 英文）：banner、界面示意、安装与工具速查。
 - 新增 `screenshots.json` 与 `assets/`（banner、图标、界面示意）。
 - `package.json` 补 `main` 字段，`files` 纳入 `assets`、`screenshots.json`、`README.en.md`。
+- 无功能变更。
 
 ## 1.0.1 — 2026-11-17
 
