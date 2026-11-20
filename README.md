@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/qiyaogongfang/dsh-kb@main/assets/banner.png" alt="dsh-kb — DeepSeek Harness 的本机知识库" width="100%">
+  <img src="https://cdn.jsdelivr.net/gh/qiyaogongfang/dsh-kb@v1.0.3/assets/banner.png" alt="dsh-kb — DeepSeek Harness 的本机知识库" width="100%">
 </p>
 
 <h1 align="center">dsh-kb</h1>

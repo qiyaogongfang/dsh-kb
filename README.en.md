@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/qiyaogongfang/dsh-kb@main/assets/icon-512.png" alt="dsh-kb" width="96">
+  <img src="https://cdn.jsdelivr.net/gh/qiyaogongfang/dsh-kb@v1.0.3/assets/icon-512.png" alt="dsh-kb" width="96">
 </p>
 
 <h1 align="center">dsh-kb</h1>

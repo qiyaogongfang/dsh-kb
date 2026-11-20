@@ -1,6 +1,6 @@
 {
   "name": "@qiyaogongfang/dsh-kb",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "本机知识库：按主题和标签分类存操作流程、规范、技术文档与踩坑记录，对话里按需检索并引用。 / Local-first knowledge base for DSH with two-level topics, tags and on-demand chat retrieval.",
   "type": "module",
   "main": "index.js",

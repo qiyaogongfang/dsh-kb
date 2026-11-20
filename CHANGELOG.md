@@ -1,5 +1,10 @@
 # 更新记录 / Changelog
 
+## 1.0.4 — 2026-11-20
+
+- README 图片改为按版本固定（`@v1.0.3`），避免 CDN 继续返回旧 banner。
+- 无功能变更。
+
 ## 1.0.3 — 2026-11-20
 
 - README：移除常见问题与界面示意图；安装区补 `dsh plugin`、`npm install`、`git clone` 命令。
