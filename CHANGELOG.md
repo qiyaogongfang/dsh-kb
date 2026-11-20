@@ -1,5 +1,11 @@
 # 更新记录 / Changelog
 
+## 1.0.3 — 2026-11-20
+
+- README：移除常见问题与界面示意图；安装区补 `dsh plugin`、`npm install`、`git clone` 命令。
+- banner 改为不含具体文档内容的通用示意；移除 `screenshots.json` 与预览图。
+- 无功能变更。
+
 ## 1.0.2 — 2026-11-20
 
 - 重写 README（中文 + 英文）：banner、界面示意、安装与工具速查。

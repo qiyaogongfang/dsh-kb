@@ -17,10 +17,6 @@ Two-level topics · free tags · full-text search · one <code>kb.json</code> ho
 
 <p align="center"><a href="README.md">中文</a> · <a href="https://github.com/qiyaogongfang/dsh-kb">⭐ Star</a></p>
 
-![Knowledge base UI](https://cdn.jsdelivr.net/gh/qiyaogongfang/dsh-kb@main/assets/preview.png)
-
-<sub>UI mock-up, not a screenshot; the real panel follows your DSH theme.</sub>
-
 ### Why dsh-kb?
 
 | Index only | Topics + tags | One JSON |
@@ -33,16 +29,21 @@ Two-level topics · free tags · full-text search · one <code>kb.json</code> ho
 - **Zero runtime dependencies.** Install and go.
 - **Edit from either side.** Use the sidebar panel, or let the agent call `kb_save` / `kb_update`.
 
-### Quick start
+### Install
 
-1. Search **`dsh-kb`** in DSH's Plugins page and install it (the scope is `@qiyaogongfang/dsh-kb`).
-2. Refresh; the **Knowledge Base** icon appears in the sidebar.
-3. Create a note, or just tell the agent "save this to the knowledge base".
+Search **`dsh-kb`** in DSH's Plugins page and install it (the scope is `@qiyaogongfang/dsh-kb`). Refresh; the **Knowledge Base** icon appears in the sidebar.
 
-Or from the command line:
+Command line / local development:
 
 ```bash
+# Install into a DSH profile (recommended)
 dsh plugin --profile web add @qiyaogongfang/dsh-kb
+
+# Install into the current directory (development)
+npm install @qiyaogongfang/dsh-kb
+
+# Clone for local development
+git clone https://github.com/qiyaogongfang/dsh-kb.git
 ```
 
 > There is an unrelated package named `dsh-kb` on npm. This project is `@qiyaogongfang/dsh-kb`.
@@ -68,7 +69,7 @@ Back up by copying `kb.json`; move machines by putting it back. Writes are atomi
 
 ### Prompt cost
 
-The prompt carries an index only: category counts plus up to three titles per top-level topic. 32 entries take about 1,100 characters, with no bodies. Bodies enter the context only through `kb_get`, so the prompt does not grow with the library.
+The prompt carries an index only: category counts plus up to three titles per top-level topic. Even a few dozen entries stay around a thousand characters, with no bodies. Bodies enter the context only through `kb_get`, so the prompt does not grow with the library.
 
 ### Project layout
 
@@ -78,24 +79,12 @@ dsh-kb/
 ├── store.js            storage: JSON, two-level topics, tags, full-text search
 ├── client.js           browser side: sidebar panel + composer reference button
 ├── cordis.patch.yml    plugin row declaration
-├── screenshots.json    storefront screenshots
-├── assets/             banner / icon / UI mock
+├── assets/             banner / icon
 └── locale/             zh / en metadata
 ```
 
 ### Local development
 
-```bash
-git clone https://github.com/qiyaogongfang/dsh-kb.git
-cd dsh-kb
-```
-
-Install the directory as a plugin in your profile (local directory in the plugin manager, or `install_bundle` with the absolute path), refresh, and iterate. Releases go through npm + OIDC: bump `package.json`, push a `v*` tag, and GitHub Actions publishes with provenance.
-
-### FAQ
-
-- **Not in the plugin market?** The market is a curated list; it appears once listed. Until then, install it with the command above.
-- **Does it upload my notes?** No. It only reads and writes the local `kb.json`; there are no network requests.
-- **Shared across people?** Yes — point `KB_STORE_DIR` at a shared directory, but keep writes to one agent at a time.
+Install the cloned directory as a plugin in your profile (local directory in the plugin manager, or `install_bundle` with the absolute path), refresh, and iterate. Releases go through npm + OIDC: bump `package.json`, push a `v*` tag, and GitHub Actions publishes with provenance.
 
 [Issues](https://github.com/qiyaogongfang/dsh-kb/issues) · [Changelog](CHANGELOG.md) · [MIT License](LICENSE) · by [qiyaogongfang](https://github.com/qiyaogongfang)
