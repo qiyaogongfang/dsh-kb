@@ -1,8 +1,9 @@
-﻿{
+{
   "name": "@qiyaogongfang/dsh-kb",
   "version": "1.0.1",
   "description": "本机知识库：按主题和标签分类存操作流程、规范、技术文档与踩坑记录，对话里按需检索并引用。 / Local-first knowledge base for DSH with two-level topics, tags and on-demand chat retrieval.",
   "type": "module",
+  "main": "index.js",
   "license": "MIT",
   "author": "qiyaogongfang <357743028+qiyaogongfang@users.noreply.github.com>",
   "repository": {
@@ -41,7 +42,10 @@
     "cordis.patch.yml",
     "locale/*.json",
     "icon.svg",
+    "assets",
+    "screenshots.json",
     "README.md",
+    "README.en.md",
     "LICENSE"
   ],
   "dsh": {

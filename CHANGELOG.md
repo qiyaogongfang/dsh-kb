@@ -1,0 +1,17 @@
+# 更新记录 / Changelog
+
+## 未发布 / Unreleased
+
+- 重写 README（中文 + 英文）：banner、界面示意、安装与工具速查。
+- 新增 `screenshots.json` 与 `assets/`（banner、图标、界面示意）。
+- `package.json` 补 `main` 字段，`files` 纳入 `assets`、`screenshots.json`、`README.en.md`。
+
+## 1.0.1 — 2026-11-17
+
+- 文档补丁：修正 README 里「npm 暂未发布」的过期说明。
+- 无功能变更。
+
+## 1.0.0 — 2026-11-17
+
+- 首个公开版本：侧栏知识库、两级主题 + 自由标签、全文检索、五个工具、同源 RPC。
+- 数据落在 `~/.dsh-kb/data/kb.json`，可用 `KB_STORE_DIR` 重定向。
